@@ -1,12 +1,16 @@
 PROJECT OVERVIEW
 This project is a multi-page website designed to showcase and provide information about 
 various virtual reality headsets. The website includes the following sections:
+
 • Home page
 • Product page
 • Features page
 • About page
 • Contact us page
+
+
 1.Virtual_reality.html- home page
+
 This is the main landing page of the website. It is designed to capture the user's attention with 
 visually appealing images and promotional text.
 It contains the:
@@ -19,7 +23,10 @@ creating a dynamic and engaging user experience.
 - Script: JavaScript code is used to automatically scroll through the image sections every 5 
 seconds. The auto-scrolling pauses when the user interacts with the page (e.g., scrolling, 
 touching, or hovering over the navigation bar) and resumes when the interaction stops.
+
+
 2.product.html- product page
+
 This page displays a catalog of VR headsets with their specifications, prices, and an option to 
 add them to a shopping cart.
 It contains the:
@@ -37,14 +44,20 @@ JavaScript function updateCart dynamically updates the shopping cart display wit
 items in the cart and their prices.
 JavaScript function placeOrder simulates placing an order by displaying a confirmation 
 message, clearing the cart, and resetting the total.
+
+
 3.features.html- features page
+
 This page showcases the important and interesting features that a VR headset can have, in a 
 visually appealing way.
 It contains the:
 - Styles: Uses a flex layout to display feature cards in a responsive manner.
 - Navigation bar: Standard navigation bar for site-wide consistency.
 - Each feature card contains an image, a heading, and a description.
+
+  
 4.about.html- about us page
+
 This page provides information about the company or team behind the VR headset showcase.
 It contains the:
 - Styles: Uses CSS to style the page, including a dark background, white text, and styled 
@@ -54,7 +67,10 @@ sections.
 sound.
 - About section: Provides information about the company's founding, location, mission, and 
 achievements.
+
+
 5.contact.html- contact us page
+
 This provides a way for users to contact the company or team behind the VR headset showcase.
 It contains the:
 - Styles: Uses CSS to style the page, including a dark background, white text, styled form 
