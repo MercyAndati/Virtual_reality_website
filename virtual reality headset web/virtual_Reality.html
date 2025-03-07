@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Reality Headsets</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: rgb(20, 20, 48);
+        }
+        h3 {
+            text-align: center;
+            color: white;
+        }
+        p {
+            color: white;
+        }
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: rgb(20, 20, 48);
+            padding: 2px;
+            text-align: center;
+            z-index: 1000;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 12px;
+            display: inline-block;
+        }
+        nav a:hover {
+            background-color: #0056b3;
+        }
+        .image-section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: rgb(42, 8, 82);
+            position: relative;
+        }
+        .image-section img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        .image-section h3, .image-section p {
+            position: absolute;
+            bottom: 25%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .image-section p {
+            bottom: 10%;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="virtual_Reality.html">Home</a> |
+        <a href="product.html">Product</a> |
+        <a href="features.html">Features</a> |
+        <a href="about.html">About Us</a> |
+        <a href="contact.html">Contact Us</a>
+    </nav>
+    <div class="image-section" id="image1" style="margin-top: 40px;">
+        <img src="vrH\VR.jpg" alt="VR image">
+        <h3>Discover the Future with VR4 Technology</h3>
+        <p>Step into the next generation of virtual reality with VR4, offering seamless integration with AI and augmented reality features.</p>
+
+    </div>
+    <div class="image-section" id="image2">
+        <img src="vrH\vr2.jpg" alt="VR2 image">
+        <h3>Exclusive Offers on VR2 Headsets</h3>
+        <p>Experience advanced VR with our VR2 headsets, featuring enhanced graphics and motion tracking. Perfect for gaming and educational experiences.</p>
+    </div>
+    <div class="image-section" id="image3">
+        <img src="vrH\vr3.webp" alt="VR3 image">
+        <h3>Discover the Future with VR3 Technology</h3>
+        <p>Step into the next generation of virtual reality with VR3, offering seamless integration with AI and augmented reality features.</p>
+    </div>
+    <div class="image-section" id="image4">
+        <img src="vrH\vr4.webp" alt="VR4 image">
+        <h3>Mega deals for VR headsets and accessories</h3>
+        <p>Don't miss our irresistible prices for VIVE Focus Vision, VIVE Pro 2, VIVE XR Elite, and accessories. More deals + gifts await! ReVIVE your New Year's resolution with VR fun.</p>
+    </div>
+
+    <script>
+        let sections = document.querySelectorAll('.image-section');
+        let index = 0;
+        let scrolling = true;
+        let scrollIntervalId;
+
+        
+        function startAutoScroll() {
+            scrollIntervalId = setInterval(() => {
+                if (scrolling) {
+                    let nextIndex = (index + 1) % sections.length;
+                    sections[nextIndex].scrollIntoView({ behavior: 'smooth' });
+                    index = nextIndex;
+                }
+            }, 5000); 
+        }
+
+        function pauseAutoScroll() {
+            scrolling = false;
+            clearInterval(scrollIntervalId);
+        }
+
+        
+        function resumeAutoScroll() {
+            scrolling = true;
+            startAutoScroll();
+        }
+
+        // Pause auto-scroll when user interacts with the page
+        document.addEventListener('wheel', pauseAutoScroll);
+        document.addEventListener('touchmove', pauseAutoScroll);
+        document.querySelector('nav').addEventListener('mouseover', pauseAutoScroll);
+
+        // Resume auto-scroll when user stops interacting
+        document.addEventListener('mouseleave', resumeAutoScroll);
+        document.querySelector('nav').addEventListener('mouseout', resumeAutoScroll);
+
+        startAutoScroll();
+    </script>
+</body>
+</html>

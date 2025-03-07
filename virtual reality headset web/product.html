@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: rgb(32, 32, 83);
+            color: white;
+        }
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: rgb(20, 20, 48);
+            padding: 10px;
+            text-align: center;
+            z-index: 1000;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 12px;
+            display: inline-block;
+        }
+        nav a:hover {
+            background-color: #0056b3;
+        }
+        h3 {
+            text-align: center;
+            color: rgb(111, 195, 231);
+            margin-top: 80px;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 90%;
+            margin: 20px auto;
+            padding: 20px;
+            border-collapse: collapse;
+            background-color: rgb(40, 40, 80);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(230, 228, 228, 0.3);
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        th {
+            background-color: rgb(20, 20, 48);
+            color: rgb(111, 195, 231);
+            font-size: 18px;
+            font-weight: bold;
+        }
+        tr:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+            transition: background-color 0.3s ease;
+        }
+        .headset-icon {
+            width: 50px;
+            height: auto;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 10px;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+        .headset-icon:hover {
+            transform: scale(1.1);
+        }
+        .cart {
+            width: 87%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgb(40, 40, 80);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(185, 182, 182, 0.3);
+        }
+        .cart h4 {
+            color: rgb(111, 195, 231);
+        }
+        .cart ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .cart ul li {
+            padding: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .cart ul li button {
+            margin-left: 10px;
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .cart ul li button:hover {
+            background-color: #cc0000;
+        }
+        .total {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .order-button {
+            background-color: rgb(111, 195, 231);
+            color: rgb(20, 20, 48);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            width: 100%;
+        }
+        .order-button:hover {
+            background-color: #0056b3;
+        }
+        .confirmation {
+            text-align: center;
+            color: rgb(111, 195, 231);
+            margin-top: 20px;
+            display: none; 
+        }
+        @media (max-width: 768px) {
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="virtual_Reality.html">Home</a> |
+        <a href="product.html">Product</a> |
+        <a href="features.html">Features</a> |
+        <a href="about.html">About Us</a> |
+        <a href="contact.html">Contact Us</a>
+    </nav>
+    <div>
+        <h3>VR Headsets Available</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>VR Headset</th>
+                    <th>Resolution (per eye)</th>
+                    <th>Field of View</th>
+                    <th>Refresh Rate</th>
+                    <th>Tracking Method</th>
+                    <th>Recommended GPU</th>
+                    <th>Weight</th>
+                    <th>Price</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img src="vrH/vrH1.webp" alt="HTC Vive Pro" class="headset-icon"> HTC Vive Pro</td>
+                    <td>1440x1600</td>
+                    <td>110°</td>
+                    <td>90 Hz</td>
+                    <td>Outside-in (Lighthouse)</td>
+                    <td>GTX 1070 or better</td>
+                    <td>Approx. 550g</td>
+                    <td>$1,000</td>
+                    <td><button onclick="addToCart('HTC Vive Pro', 1000)">Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td><img src="vrH/vrH2.webp" alt="HTC Vive Pro 2" class="headset-icon"> HTC Vive Pro 2</td>
+                    <td>2448x2448</td>
+                    <td>112°</td>
+                    <td>90/120 Hz</td>
+                    <td>Outside-in (Lighthouse)</td>
+                    <td>GTX 1060 or better</td>
+                    <td>Approx. 650g</td>
+                    <td>$1,100</td>
+                    <td><button onclick="addToCart('HTC Vive Pro 2', 1100)">Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td><img src="vrH\vrH3.webp" alt="Oculus Quest 2" class="headset-icon"> Oculus Quest 2</td>
+                    <td>1832x1920</td>
+                    <td>89°</td>
+                    <td>72 / 90 / 120 Hz</td>
+                    <td>Inside-out</td>
+                    <td>No PC required</td>
+                    <td>Approx. 470g</td>
+                    <td>$350</td>
+                    <td><button onclick="addToCart('Oculus Quest 2', 350)">Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td><img src="vrH\vrH4.webp" alt="Valve Index" class="headset-icon"> Valve Index</td>
+                    <td>1440x1600</td>
+                    <td>130°</td>
+                    <td>80 / 90 / 120 / 144 Hz</td>
+                    <td>Outside-in (Lighthouse)</td>
+                    <td>GTX 1070 or better</td>
+                    <td>Approx. 800g</td>
+                    <td>$800</td>
+                    <td><button onclick="addToCart('Valve Index', 800)">Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td><img src="vrH\vrH5.png" alt="Oculus Rift S" class="headset-icon"> Oculus Rift S</td>
+                    <td>1832x1920</td>
+                    <td>89°</td>
+                    <td>80 Hz</td>
+                    <td>Inside-out</td>
+                    <td>GTX 1060 or better</td>
+                    <td>Approx. 470g</td>
+                    <td>$400</td>
+                    <td><button onclick="addToCart('Oculus Rift S', 400)">Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td><img src="vrH\vrH6.png" alt="HP Reverb" class="headset-icon"> HP Reverb</td>
+                    <td>2160x2160</td>
+                    <td>114°</td>
+                    <td>90 Hz</td>
+                    <td>Inside-out</td>
+                    <td>GTX 1060 or better</td>
+                    <td>Approx. 500g</td>
+                    <td>$800</td>
+                    <td><button onclick="addToCart('HP Reverb', 800)">Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td><img src="vrH\vrH7.png" alt="PlayStation VR" class="headset-icon"> PlayStation VR</td>
+                    <td>1024x1024</td>
+                    <td>100°</td>
+                    <td>120 Hz</td>
+                    <td>Outside-in (PS Camera)</td>
+                    <td>PS4</td>
+                    <td>Approx. 600g</td>
+                    <td>$400</td>
+                    <td><button onclick="addToCart('PlayStation VR', 400)">Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td><img src="vrH\vrH8.png" alt="Windows Mixed Reality" class="headset-icon"> Windows Mixed Reality</td>
+                    <td>1440x1440</td>
+                    <td>95°</td>
+                    <td>90 Hz</td>
+                    <td>Inside-out</td>
+                    <td>Intel Core i5 or better</td>
+                    <td>Approx. 400g</td>
+                    <td>1000</td>
+                    <td><button onclick="addToCart('Windows Mixed Reality', 1000)">Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td><img src="vrH\vrH9.png" alt="HTC Vive Focus" class="headset-icon"> HTC Vive Focus</td>
+                    <td>1832x1920</td>
+                    <td>110°</td>
+                    <td>75 Hz</td>
+                    <td>Inside-out</td>
+                    <td>No PC required</td>
+                    <td>Approx. 470g</td>
+                    <td>$700</td>
+                    <td><button onclick="addToCart('HTC Vive Focus', 700)">Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td><img src="vrH\vrH10.png" alt="HTC Vive XR Elite" class="headset-icon"> HTC Vive XR Elite</td>
+                    <td>1832x1920</td>
+                    <td>110°</td>
+                    <td>90 Hz</td>
+                    <td>Inside-out</td>
+                    <td>No PC required</td>
+                    <td>Approx. 470g</td>
+                    <td>$1,400</td>
+                    <td><button onclick="addToCart('HTC Vive XR Elite', 1400)">Add to Cart</button></td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+    
+    <div class="cart">
+        <h4>Shopping Cart</h4>
+        <ul id="cart-items"></ul>
+        <div class="total">Total: $<span id="cart-total">0</span></div>
+        <button class="order-button" onclick="placeOrder()">Order Now</button>
+        <div id="orderConfirmation" class="confirmation">
+            <p>Your order has been placed successfully!</p>
+        </div>
+    </div>
+
+    <script>
+        let cart = [];
+        let total = 0;
+
+        function addToCart(name, price) {
+            cart.push({ name, price });
+            total += price;
+            updateCart();
+        }
+
+        function removeFromCart(index) {
+            total -= cart[index].price;
+            cart.splice(index, 1);
+            updateCart();
+        }
+
+        function updateCart() {
+            const cartItems = document.getElementById("cart-items");
+            const cartTotal = document.getElementById("cart-total");
+
+            // Clear the cart display
+            cartItems.innerHTML = "";
+
+            // Add each item to the cart display
+            cart.forEach((item, index) => {
+                const li = document.createElement("li");
+                li.textContent = `${item.name} - $${item.price}`;
+                const removeButton = document.createElement("button");
+                removeButton.textContent = "Remove";
+                removeButton.onclick = () => removeFromCart(index);
+                li.appendChild(removeButton);
+                cartItems.appendChild(li);
+            });
+
+            
+            cartTotal.textContent = total;
+        }
+
+        function placeOrder() {
+            if (cart.length === 0) {
+                alert("Your cart is empty. Please add items to place an order.");
+                return;
+            }
+
+            
+            const confirmation = document.getElementById("orderConfirmation");
+            confirmation.style.display = "block";
+
+            cart = [];
+            total = 0;
+            updateCart();
+
+            
+            setTimeout(() => {
+                confirmation.style.display = "none";
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
